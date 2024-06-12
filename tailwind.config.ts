@@ -65,7 +65,7 @@ const config: Config = {
           950: "#141a57",
         },
 
-        gray: {
+        black: {
           50: "#f6f6f6",
           100: "#e7e7e7",
           200: "#d1d1d1",
@@ -88,13 +88,44 @@ const config: Config = {
         sansNeo: "var(--font-sans-neo)",
       },
     },
+    backgroundColor: ({ theme }) => ({
+      ...theme("colors"),
+    }),
   },
   plugins: [
-    plugin(({ addUtilities }) => {
-      addUtilities({
+    plugin(({ addComponents, theme }) => {
+      addComponents({
         ".caption": {
-          "font-size": "12px",
-          "line-height": "16px",
+          fontSize: theme("fontSize.xs"),
+          lineHeight: theme("lineHeight.4"),
+        },
+        ".description": {
+          fontSize: theme("fontSize.sm"),
+          lineHeight: theme("lineHeight.6"),
+        },
+        ".body3": {
+          fontSize: theme("fontSize.base"),
+          lineHeight: theme("lineHeight.6"),
+        },
+        ".body2": {
+          fontSize: theme("fontSize.lg"),
+          lineHeight: theme("lineHeight.6"),
+        },
+        body1: {
+          fontSize: theme("fontSize.xl"),
+          lineHeight: theme("lineHeight.8"),
+        },
+        ".headline": {
+          fontSize: theme("fontSize.2xl"),
+          lineHeight: theme("lineHeight.8"),
+        },
+        ".title2": {
+          fontSize: theme("fontSize.3xl"),
+          lineHeight: theme("lineHeight.10"),
+        },
+        ".title1": {
+          fontSize: theme("fontSize.4xl"),
+          lineHeight: "2.875rem",
         },
       });
     }),

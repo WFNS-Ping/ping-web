@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 * {
-  @apply font-sansNeo;
+  @apply font-sansNeo text-base;
+  /* 버튼 Touch 시 나오는 음영 지우기 */
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* test select 안되게 하기 */
+  user-select: none;
+  /* 롱터치 막기 */
+  -webkit-touch-callout: none;
 }
 
 :root {
@@ -18,16 +24,6 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
