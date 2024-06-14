@@ -66,7 +66,7 @@ const config: Config = {
         },
 
         black: {
-          50: "#f6f6f6",
+          50: "#f9f9f9",
           100: "#e7e7e7",
           200: "#d1d1d1",
           300: "#b0b0b0",
@@ -111,7 +111,7 @@ const config: Config = {
           fontSize: theme("fontSize.lg"),
           lineHeight: theme("lineHeight.6"),
         },
-        body1: {
+        ".body1": {
           fontSize: theme("fontSize.xl"),
           lineHeight: theme("lineHeight.8"),
         },
@@ -126,6 +126,28 @@ const config: Config = {
         ".title1": {
           fontSize: theme("fontSize.4xl"),
           lineHeight: "2.875rem",
+        },
+        ".scrollbar-hide": {
+          "scrollbar-width": "none",
+          "-ms-overflow-style": "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
+        ".input-base": {
+          border: `1px solid ${theme("colors.black.200")}`,
+          "background-color": theme("colors.black.50"),
+          borderRadius: theme("borderRadius.DEFAULT"),
+          padding: `${theme("spacing.4")} ${theme("spacing.6")}`,
+          width: theme("width.full"),
+          fontSize: theme("fontSize.sm"),
+          lineHeight: theme("lineHeight.6"),
+          fontWeight: theme("fontWeight.bold"),
+          "&::placeholder": {
+            fontSize: theme("fontSize.sm"),
+            lineHeight: theme("lineHeight.6"),
+            color: theme("colors.black.200"),
+          },
         },
       });
     }),
