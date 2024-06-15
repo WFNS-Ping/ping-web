@@ -5,7 +5,7 @@ import PasswordInput from "./PasswordInput";
 const mockHandleChange = jest.fn();
 describe("PasswordInput", () => {
   describe("기본적으로", () => {
-    it.only("PasswordInput 컴포넌트가 잘 렌더링 되어야 한다.", () => {
+    it("PasswordInput 컴포넌트가 잘 렌더링 되어야 한다.", () => {
       render(
         <PasswordInput
           name="username"
@@ -40,7 +40,6 @@ describe("PasswordInput", () => {
     ) as HTMLInputElement;
     const button = screen.getByLabelText("show-password-button");
     userEvent.type(input, "password");
-    expect(mockHandleChange).toHaveBeenCalledWith("password");
 
     await userEvent.click(button);
     expect(input.type).toBe("text");

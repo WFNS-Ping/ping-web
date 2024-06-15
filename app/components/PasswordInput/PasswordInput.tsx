@@ -1,8 +1,7 @@
 "use client";
 import { cn } from "@/app/utils/cn";
 import { ChangeEvent, FC, useState } from "react";
-import HideIcon from "@/public/icons/hide-eyes.svg";
-import ShowIcon from "@/public/icons/show-eyes.svg";
+import { HideIcon, ShowIcon } from "@/app/assets/icons";
 interface PasswordInputProps {
   name: string;
   placeholder?: string;
@@ -19,7 +18,6 @@ const PasswordInput: FC<PasswordInputProps> = ({
   className,
 }) => {
   const [type, setType] = useState<"password" | "text">("password");
-  console.log(HideIcon);
 
   const onClickIcon = () => {
     setType((prev) => (prev === "password" ? "text" : "password"));
@@ -39,6 +37,8 @@ const PasswordInput: FC<PasswordInputProps> = ({
         <HideIcon
           aria-label="show-password-button"
           role="button"
+          width="1.5rem"
+          height="1.5rem"
           className={cn("absolute", "top-4", "right-6")}
           onClick={onClickIcon}
         />

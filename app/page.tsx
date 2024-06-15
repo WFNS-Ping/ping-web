@@ -10,12 +10,7 @@ export default function Home() {
   return (
     <main className="bg-black-50 scrollbar-hide h-full">
       <h1>Home</h1>
-      <PasswordInput
-        name="name"
-        value={first}
-        onChange={change}
-        placeholder=""
-      />
+      <PasswordInput name="name" onChange={change} placeholder="" />
       <Link href="/about">About</Link>
     </main>
   );
