@@ -1,7 +1,7 @@
 "use client";
-import { cn } from "@/app/utils/cn";
+import { cn } from "@/utils/cn";
 import { ChangeEvent, FC, useState } from "react";
-import { HideIcon, ShowIcon, CheckIcon } from "@/app/assets/icons";
+import { HideIcon, ShowIcon, CheckIcon } from "@/assets/icons";
 interface PasswordInputProps {
   name: string;
   placeholder?: string;

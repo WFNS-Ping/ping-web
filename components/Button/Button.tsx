@@ -1,4 +1,4 @@
-import { cn } from "@/app/utils/cn";
+import { cn } from "@/utils/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes, FC } from "react";
 
@@ -26,13 +26,7 @@ interface ButtonProps
   children?: React.ReactNode;
 }
 
-const Button: FC<ButtonProps> = ({
-  size,
-  bgColor,
-
-  children,
-  ...props
-}) => {
+const Button: FC<ButtonProps> = ({ size, bgColor, children, ...props }) => {
   return (
     <button className={cn(ButtonVariants({ size, bgColor }))} {...props}>
       {children}

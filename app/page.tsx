@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
-import PasswordInput from "./components/PasswordInput";
+import PasswordInput from "@/components/PasswordInput";
 import { ChangeEvent, useState } from "react";
+import Checkbox from "@/components/Checkbox";
 export default function Home() {
-  const [first, setfirst] = useState("");
+  const [first, setFirst] = useState("");
+  const [checked, setChecked] = useState(false);
   const change = (e: ChangeEvent<HTMLInputElement>) => {
-    setfirst(e.target.value);
+    setFirst(e.target.value);
   };
   return (
     <main className="bg-black-50 scrollbar-hide h-full">
@@ -17,6 +19,13 @@ export default function Home() {
         placeholder=""
       />
       <Link href="/about">About</Link>
+      <div className="bg-black-950">
+        <Checkbox
+          label="필수 값"
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        />
+      </div>
     </main>
   );
 }
