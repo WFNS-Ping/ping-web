@@ -1,0 +1,22 @@
+.checkbox-input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 2px solid #f9f9f9;
+  background-color: #000;
+  margin-right: 0.3125rem;
+  border-radius: 2px;
+  padding: 1px;
+}
