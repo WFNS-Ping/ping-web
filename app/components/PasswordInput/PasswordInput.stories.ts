@@ -8,7 +8,7 @@ const meta = {
   component: PasswordInput,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
+    layout: "padded",
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
@@ -24,5 +24,12 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     name: "PasswordInput",
+    value: "",
+  },
+  parameters: {
+    design: {
+      type: "figma",
+      url: `${process.env.NEXT_PUBLIC_FIGMA_URL}?node-id=383-3492&m=dev`,
+    },
   },
 };

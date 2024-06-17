@@ -18,4 +18,13 @@ const ShowIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export { ShowIcon, HideIcon };
+const CheckIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 18 14" {...props}>
+    <path
+      d="M5.79995 10.9L1.59995 6.69999L0.199951 8.09999L5.79995 13.7L17.8 1.69999L16.4 0.299988L5.79995 10.9Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export { ShowIcon, HideIcon, CheckIcon };

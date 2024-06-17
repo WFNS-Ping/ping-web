@@ -10,9 +10,7 @@ const createJestConfig = nextJest({
 const config: Config = {
   coverageProvider: "v8",
   testEnvironment: "jsdom",
-  transform: {
-    "^.+\\.svg$": "jest-transformer-svg",
-  },
+
   moduleNameMapper: {
     "^@/components/(.*)$": "<rootDir>/app/components/$1",
   },

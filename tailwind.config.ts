@@ -88,6 +88,10 @@ const config: Config = {
       fontFamily: {
         sansNeo: "var(--font-sans-neo)",
       },
+      boxShadow: {
+        small: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
+        normal: "0px 4px 8px 0px rgba(0, 0, 0, 0.25) inset",
+      },
     },
     backgroundColor: ({ theme }) => ({
       ...theme("colors"),
