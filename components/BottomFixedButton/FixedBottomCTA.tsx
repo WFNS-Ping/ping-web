@@ -2,7 +2,6 @@ import { ComponentProps, ComponentType } from "react";
 import { GlobalPortal } from "../GlobalPortal/GlobalPortal";
 import Button from "../Button";
 import { cn } from "@/utils/cn";
-type Props = ComponentProps<typeof Button>;
 
 type TypeAProps = ComponentProps<typeof Button>;
 function TypeA(props: TypeAProps) {
@@ -32,7 +31,7 @@ function TypeB({ leftButton, rightButton }: TypeBProps) {
           data-testid="two_button_location_elem"
           className={cn("fixed", "w-full", "left-0", "bottom-0")}
         >
-          <div className={cn("p-4", "flex", "justify-center")}>
+          <div className={cn("py-4", "px-10", "flex", "justify-between")}>
             {leftButton}
             {rightButton}
           </div>
