@@ -5,8 +5,8 @@ import { ButtonHTMLAttributes, FC } from "react";
 const ButtonVariants = cva(``, {
   variants: {
     size: {
-      small: "py-[0.6875rem] px-6 caption shadow-small w-full",
-      normal: "px-4 py-4 shadow-normal w-full",
+      small: "py-[0.6875rem] px-6 caption shadow-small w-full font-bold",
+      normal: "px-4 py-4 shadow-normal w-full font-bold",
     },
     bgColor: {
       black: "bg-black-950 rounded-full text-black-50 disabled:text-black-800",

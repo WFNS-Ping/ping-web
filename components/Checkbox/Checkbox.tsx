@@ -6,7 +6,7 @@ interface IProps {
   className?: string;
   checked: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  label: string;
+  label: string | React.ReactNode;
 }
 
 const Checkbox: React.FC<IProps> = ({
@@ -16,15 +16,7 @@ const Checkbox: React.FC<IProps> = ({
   ...props
 }) => {
   return (
-    <label
-      className={cn(
-        "text-black-50",
-        "flex",
-        "items-center",
-        "p-[0.1875rem]",
-        className
-      )}
-    >
+    <label className={cn("text-black-50", "flex", "items-center", className)}>
       <input
         className={style["checkbox-input"]}
         type="checkbox"

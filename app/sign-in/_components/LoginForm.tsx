@@ -7,7 +7,7 @@ import useInput from "@/hooks/useInput";
 import { cn } from "@/utils/cn";
 import React from "react";
 
-const Login = () => {
+const LoginForm = () => {
   const { value: id, onChange: onIdChange } = useInput("");
   const { value: password, onChange: onPasswordChange } = useInput("");
   return (
@@ -57,4 +57,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
