@@ -25,19 +25,17 @@ type TypeBProps = {
 };
 function TypeB({ leftButton, rightButton }: TypeBProps) {
   return (
-    <>
-      <GlobalPortal.Consumer>
-        <div
-          data-testid="two_button_location_elem"
-          className={cn("fixed", "w-full", "left-0", "bottom-0")}
-        >
-          <div className={cn("py-4", "px-10", "flex", "justify-between")}>
-            {leftButton}
-            {rightButton}
-          </div>
+    <GlobalPortal.Consumer>
+      <div
+        data-testid="two_button_location_elem"
+        className={cn("fixed", "w-full", "left-0", "bottom-0")}
+      >
+        <div className={cn("py-4", "px-10", "flex", "justify-between")}>
+          {leftButton}
+          {rightButton}
         </div>
-      </GlobalPortal.Consumer>
-    </>
+      </div>
+    </GlobalPortal.Consumer>
   );
 }
 
