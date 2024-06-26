@@ -3,13 +3,16 @@ import FixedBottomCTA from "@/components/BottomFixedButton";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import PasswordInput from "@/components/PasswordInput";
+import useAppRouter from "@/hooks/useAppRouter";
 import useInput from "@/hooks/useInput";
 import { cn } from "@/utils/cn";
 import React from "react";
 
 const NotiSelection = () => {
+  const router = useAppRouter();
   const { value: id, onChange: onIdChange } = useInput("");
   const { value: password, onChange: onPasswordChange } = useInput("");
+
   return (
     <>
       <form action="">
@@ -30,7 +33,9 @@ const NotiSelection = () => {
           className={cn("mb-4")}
         />
       </form>
-      <Button>다음</Button>
+      <Button type="button" onClick={() => router.push("/start")}>
+        다음
+      </Button>
     </>
   );
 };

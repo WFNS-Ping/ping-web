@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import { LogoWhite } from "@/assets/icons";
 import { cn } from "@/utils/cn";
 import Button from "@/components/Button";
+import useAppRouter from "@/hooks/useAppRouter";
 const WelcomePage = () => {
+  const router = useAppRouter();
   return (
     <main className={cn("flex", "flex-col", "justify-between", "h-full")}>
       <div className={cn("py-10", "flex", "justify-center")}>
@@ -24,7 +27,9 @@ const WelcomePage = () => {
         <span>Ping은 가려던 장소를 갈 수 있게 도움을 줍니다.</span>
         <span>먼저, 알림 기준을 정해볼까요?</span>
       </div>
-      <Button>다음</Button>
+      <Button type="button" onClick={() => router.push("/setting")}>
+        다음
+      </Button>
     </main>
   );
 };

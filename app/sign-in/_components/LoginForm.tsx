@@ -3,6 +3,7 @@ import FixedBottomCTA from "@/components/BottomFixedButton";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import PasswordInput from "@/components/PasswordInput";
+import useAppRouter from "@/hooks/useAppRouter";
 import useInput from "@/hooks/useInput";
 import { cn } from "@/utils/cn";
 import React from "react";
@@ -10,6 +11,7 @@ import React from "react";
 const LoginForm = () => {
   const { value: id, onChange: onIdChange } = useInput("");
   const { value: password, onChange: onPasswordChange } = useInput("");
+  const { push } = useAppRouter();
   return (
     <>
       <form action="">
@@ -40,6 +42,9 @@ const LoginForm = () => {
               "mt-2",
               "text-center"
             )}
+            onClick={() => {
+              push("/sign-up");
+            }}
           >
             Ping 회원 가입하기
           </span>
