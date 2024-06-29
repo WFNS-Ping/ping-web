@@ -155,6 +155,7 @@ const config: Config = {
         },
       });
     }),
+    require("tailwind-scrollbar-hide"),
   ],
 };
 export default config;
