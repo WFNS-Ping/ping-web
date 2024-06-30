@@ -33,6 +33,7 @@ const PlaceResultBottomSheet = ({
           <StarIcon
             width="1.5rem"
             height="1.5rem"
+            fill="none"
             aria-label="즐겨찾기 버튼"
             role="button"
           />
