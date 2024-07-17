@@ -1,3 +1,3 @@
-import SearchInput from "./SearchInput";
+import SearchInput from "./Search";
 
 export default SearchInput;

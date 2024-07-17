@@ -1,3 +1,4 @@
+"use client";
 import { ComponentProps, ComponentType } from "react";
 import { GlobalPortal } from "../GlobalPortal/GlobalPortal";
 import Button from "../Button";

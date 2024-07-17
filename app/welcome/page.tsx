@@ -1,35 +1,35 @@
 "use client";
 import React from "react";
-import { LogoWhite } from "@/assets/icons";
 import { cn } from "@/utils/cn";
-import Button from "@/components/Button";
 import useAppRouter from "@/hooks/useAppRouter";
+import OnboardingBadge from "@/components/OnboardingBadge/OnboardingBadge";
+import FixedBottomCTA from "@/components/BottomFixedButton";
 const WelcomePage = () => {
   const router = useAppRouter();
   return (
-    <main className={cn("flex", "flex-col", "justify-between", "h-full")}>
-      <div className={cn("py-10", "flex", "justify-center")}>
-        <LogoWhite width="4.9375rem" height="2.125rem" viewBox="0 0 79 34" />
+    <main className={cn("h-full", "pt-10")}>
+      <div>
+        <OnboardingBadge currentStep={1} totalStep={4} />
+        <h1 className={cn("body1", "font-bold", "text-white", "mt-2")}>
+          Ping 찍고 오신걸, 환영합니다
+        </h1>
       </div>
-      <h1 className={cn("headline", "text-white", "font-bold", "text-center")}>
-        환영합니다
-      </h1>
       <div
         className={cn(
           "flex",
           "flex-col",
-          "gap-y-2.5",
-          "body1",
+          "gap-y-2",
+          "body3",
           "text-white",
-          "text-center"
+          "mt-4"
         )}
       >
-        <span>Ping은 가려던 장소를 갈 수 있게 도움을 줍니다.</span>
-        <span>먼저, 알림 기준을 정해볼까요?</span>
+        <span>While you are there, Ping!</span>
+        <span>언제 어디에서나 바로 알림 서비스 Ping!</span>
       </div>
-      <Button type="button" onClick={() => router.push("/setting")}>
+      <FixedBottomCTA onClick={() => router.push("/setting")}>
         다음
-      </Button>
+      </FixedBottomCTA>
     </main>
   );
 };
