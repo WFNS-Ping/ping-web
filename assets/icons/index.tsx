@@ -108,9 +108,8 @@ const ClockIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" {...props}>
     <g id="clock">
       <path
-        id="Vector"
         d="M12 8V12L15 15M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
-        stroke="black"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -120,15 +119,23 @@ const ClockIcon = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const XIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path
-      id="Vector"
-      d="M1 1L13 13M1 13L13 1L1 13Z"
-      stroke="black"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g>
+      <path
+        d="M6 6L18 18M6 18L18 6L6 18Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
   </svg>
 );
 
@@ -141,14 +148,14 @@ const TimeIcon = (props: SVGProps<SVGSVGElement>) => (
         cy="12"
         r="9"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         id="Vector 64"
         d="M16.5 12H12.25C12.1119 12 12 11.8881 12 11.75V8.5"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </g>
   </svg>
@@ -161,20 +168,56 @@ const MapIcon = (props: SVGProps<SVGSVGElement>) => (
         id="Vector 326"
         d="M21 16.6953V5.66466C21 5.34631 20.6785 5.12861 20.3829 5.24685L16.1351 6.94596C16.0473 6.98109 15.9506 6.98765 15.8588 6.96471L8.14116 5.03529C8.04939 5.01235 7.95273 5.01891 7.8649 5.05404L3.28287 6.88685C3.11203 6.95519 3 7.12066 3 7.30466V18.3353C3 18.6537 3.32154 18.8714 3.61713 18.7531L7.8649 17.054C7.95273 17.0189 8.04939 17.0123 8.14117 17.0353L15.8588 18.9647C15.9506 18.9877 16.0473 18.9811 16.1351 18.946L20.7171 17.1131C20.888 17.0448 21 16.8793 21 16.6953Z"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinejoin="round"
       />
       <path
         id="Vector 327"
         d="M16 19V7"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         id="Vector 328"
         d="M8 17L8 5"
         stroke="currentColor"
-        stroke-width="2"
+        strokeWidth="2"
+      />
+    </g>
+  </svg>
+);
+
+const ChevronLeftIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
+    <g>
+      <path
+        id="Vector"
+        d="M15 19L8 12L15 5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);
+
+const LocationMarkerIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
+    <g>
+      <path
+        d="M17.657 16.657L13.414 20.9C13.2284 21.0857 13.0081 21.233 12.7656 21.3336C12.523 21.4341 12.2631 21.4859 12.0005 21.4859C11.738 21.4859 11.478 21.4341 11.2354 21.3336C10.9929 21.233 10.7726 21.0857 10.587 20.9L6.343 16.657C5.22422 15.5381 4.46234 14.1127 4.15369 12.5608C3.84504 11.009 4.00349 9.40047 4.60901 7.93868C5.21452 6.4769 6.2399 5.22749 7.55548 4.34846C8.87107 3.46943 10.4178 3.00024 12 3.00024C13.5822 3.00024 15.1289 3.46943 16.4445 4.34846C17.7601 5.22749 18.7855 6.4769 19.391 7.93868C19.9965 9.40047 20.155 11.009 19.8463 12.5608C19.5377 14.1127 18.7758 15.5381 17.657 16.657V16.657Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.1213 13.1213C14.6839 12.5587 15 11.7956 15 11C15 10.2044 14.6839 9.44129 14.1213 8.87868C13.5587 8.31607 12.7956 8 12 8C11.2044 8 10.4413 8.31607 9.87868 8.87868C9.31607 9.44129 9 10.2044 9 11C9 11.7956 9.31607 12.5587 9.87868 13.1213C10.4413 13.6839 11.2044 14 12 14C12.7956 14 13.5587 13.6839 14.1213 13.1213Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </g>
   </svg>
@@ -192,4 +235,6 @@ export {
   XIcon,
   TimeIcon,
   MapIcon,
+  ChevronLeftIcon,
+  LocationMarkerIcon,
 };

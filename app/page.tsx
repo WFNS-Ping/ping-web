@@ -6,6 +6,7 @@ import Checkbox from "@/components/Checkbox";
 import useModal from "@/hooks/useModal";
 import ExampleModal from "@/components/ModalBase/ExampleModal";
 import PlaceResultBottomSheet from "@/components/PlaceResultBottomSheet";
+import TimePicker from "@/components/TimePicker/TimePicker";
 export default function Home() {
   const { openModal } = useModal(ExampleModal);
   const [first, setFirst] = useState("");
@@ -50,6 +51,7 @@ export default function Home() {
           "https://health.chosun.com/site/data/img_dir/2024/02/20/2024022002560_0.jpg",
         ]}
       />
+      <TimePicker />
     </main>
   );
 }

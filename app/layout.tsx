@@ -30,8 +30,7 @@ export default function RootLayout({
           "w-screen",
           "h-screen",
           "sm:container",
-          "m-auto",
-          "bg-black-950"
+          "m-auto"
         )}
       >
         <FixedButtonProvider>
