@@ -30,7 +30,7 @@ const LoginForm = () => {
           placeholder="비밀번호"
         />
         <div className={cn("mt-10", "flex", "flex-col", "justify-center")}>
-          <Button size="normal" bgColor="white">
+          <Button size="normal" bgColor="black">
             로그인
           </Button>
           <span
@@ -38,7 +38,7 @@ const LoginForm = () => {
             className={cn(
               "underline",
               "description",
-              "text-black-50",
+              "text-black-950",
               "mt-2",
               "text-center"
             )}
@@ -52,10 +52,10 @@ const LoginForm = () => {
       </form>
       <FixedBottomCTA.TypeB
         leftButton={
-          <span className={cn("text-black-50", "body3")}>아이디 찾기</span>
+          <span className={cn("text-black-950", "body3")}>아이디 찾기</span>
         }
         rightButton={
-          <span className={cn("text-black-50", "body3")}>비밀번호 찾기</span>
+          <span className={cn("text-black-950", "body3")}>비밀번호 찾기</span>
         }
       />
     </>

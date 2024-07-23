@@ -20,7 +20,6 @@ export const useRadioGroupContext = () => {
   const onChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       const nextValue = event.target.value;
-      console.log(nextValue);
 
       onChangeProp?.(nextValue);
     },

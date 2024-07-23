@@ -7,8 +7,8 @@ const SettingPage = () => {
   return (
     <main className={cn("h-full", "pt-10")}>
       <div>
-        <OnboardingBadge currentStep={1} totalStep={4} />
-        <h1 className={cn("body1", "font-bold", "text-white", "mt-2")}>
+        <OnboardingBadge currentStep={2} totalStep={4} />
+        <h1 className={cn("body1", "font-bold", "text-black-950", "mt-2")}>
           알림 설정
         </h1>
       </div>
@@ -18,7 +18,7 @@ const SettingPage = () => {
           "flex-col",
           "gap-y-2",
           "body3",
-          "text-white",
+          "text-black-950",
           "mt-4"
         )}
       >

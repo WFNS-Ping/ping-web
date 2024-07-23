@@ -140,7 +140,6 @@ const config: Config = {
         },
         ".input-base": {
           border: `1px solid ${theme("colors.black.200")}`,
-          "background-color": theme("colors.black.50"),
           borderRadius: theme("borderRadius.DEFAULT"),
           padding: `${theme("spacing.4")} ${theme("spacing.6")}`,
           width: theme("width.full"),

@@ -8,7 +8,6 @@ import { cn } from "@/utils/cn";
 const MINUTES = Array.from({ length: 60 }, (_: unknown, i: number) => i);
 const HOURS = Array.from({ length: 12 }, (_: unknown, i: number) => i + 1);
 const TimePicker = () => {
-  console.log(MINUTES);
   return (
     <div className={cn("h-[13rem]", "container", "px-[5.25rem]", "w-full")}>
       <Swiper

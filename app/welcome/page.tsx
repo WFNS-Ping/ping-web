@@ -10,7 +10,7 @@ const WelcomePage = () => {
     <main className={cn("h-full", "pt-10")}>
       <div>
         <OnboardingBadge currentStep={1} totalStep={4} />
-        <h1 className={cn("body1", "font-bold", "text-white", "mt-2")}>
+        <h1 className={cn("body1", "font-bold", "text-black-950", "mt-2")}>
           Ping 찍고 오신걸, 환영합니다
         </h1>
       </div>
@@ -20,14 +20,14 @@ const WelcomePage = () => {
           "flex-col",
           "gap-y-2",
           "body3",
-          "text-white",
+          "text-black-950",
           "mt-4"
         )}
       >
         <span>While you are there, Ping!</span>
         <span>언제 어디에서나 바로 알림 서비스 Ping!</span>
       </div>
-      <FixedBottomCTA onClick={() => router.push("/setting")}>
+      <FixedBottomCTA bgColor="black" onClick={() => router.push("/setting")}>
         다음
       </FixedBottomCTA>
     </main>

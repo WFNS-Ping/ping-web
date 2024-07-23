@@ -18,11 +18,11 @@ const OnboardingBadge = ({ totalStep, currentStep }: Props) => {
         "caption",
         "font-bold",
         "text-black-200",
-        "bg-white",
+        "bg-blue-600",
         "rounded-full"
       )}
     >
-      <strong className="text-black-950" aria-label="현재 단계">
+      <strong className="text-white" aria-label="현재 단계">
         {currentStep}
       </strong>
       /<span aria-label="총 단계">{totalStep}</span>

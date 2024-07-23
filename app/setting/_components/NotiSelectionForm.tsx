@@ -1,12 +1,10 @@
 "use client";
 import FixedBottomCTA from "@/components/BottomFixedButton";
-import Input from "@/components/Input";
+
 import RadioGroup from "@/components/RadioGroup";
 import Radio from "@/components/Radio";
 
 import useAppRouter from "@/hooks/useAppRouter";
-import useInput from "@/hooks/useInput";
-import { cn } from "@/utils/cn";
 import React, { useState } from "react";
 import { MapIcon, TimeIcon } from "@/assets/icons";
 
@@ -14,6 +12,13 @@ const NotiSelection = () => {
   const router = useAppRouter();
   const [value, setValue] = useState<"time" | "distance" | "">("");
 
+  const handleOnNext = () => {
+    if (value === "time") {
+      router.push("/time");
+    } else if (value === "distance") {
+      router.push("/distance");
+    }
+  };
   return (
     <>
       <form className="mt-10" action="">
@@ -26,7 +31,12 @@ const NotiSelection = () => {
           </Radio>
         </RadioGroup>
       </form>
-      <FixedBottomCTA type="button" onClick={() => router.push("/start")}>
+      <FixedBottomCTA
+        bgColor="black"
+        type="button"
+        disabled={value === ""}
+        onClick={handleOnNext}
+      >
         다음
       </FixedBottomCTA>
     </>
