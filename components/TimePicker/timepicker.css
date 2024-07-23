@@ -1,0 +1,56 @@
+.swiper-slide {
+  @apply body1 text-black-700 text-center;
+}
+#minute-swiper .swiper-slide {
+  width: 1.8125rem;
+}
+#hour-swiper .swiper-slide {
+  width: 1.8125rem;
+}
+
+.swiper-slide-prev .swiper-slide-next {
+  @apply body1 text-black-500;
+}
+.swiper-slide-active {
+  @apply headline font-bold text-white;
+}
+#ampm .swiper-slide-prev {
+  @apply headline text-black-700;
+}
+#ampm .swiper-slide-next {
+  @apply headline text-black-700;
+}
+
+.container {
+  display: flex;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.container::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 55px;
+
+  background: #000;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: -1;
+}
