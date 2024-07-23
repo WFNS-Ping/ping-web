@@ -33,3 +33,17 @@ export const Default: Story = {
     },
   },
 };
+
+export const ShowPasswordCheck: Story = {
+  args: {
+    name: "PasswordInput",
+    showPasswordCheck: true,
+    value: "",
+  },
+  parameters: {
+    design: {
+      type: "figma",
+      url: `${process.env.NEXT_PUBLIC_FIGMA_URL}?node-id=383-3492&m=dev`,
+    },
+  },
+};

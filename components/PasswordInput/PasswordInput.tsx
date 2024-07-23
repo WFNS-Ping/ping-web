@@ -9,6 +9,7 @@ interface PasswordInputProps {
   className?: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  showPasswordCheck?: boolean;
 }
 const PasswordCondition = [
   { type: "영문", regExp: /.*[A-Za-z].*/ },
@@ -23,6 +24,7 @@ const PasswordInput: FC<PasswordInputProps> = ({
   onChange,
   className,
   value,
+  showPasswordCheck = false,
 }) => {
   const [type, setType] = useState<"password" | "text">("password");
 
@@ -58,30 +60,31 @@ const PasswordInput: FC<PasswordInputProps> = ({
           onClick={onClickIcon}
         />
       )}
-
-      <div className={cn("mt-1", "flex", "gap-x-4")}>
-        {PasswordCondition.map(({ type, regExp }) => (
-          <span
-            key={type}
-            className={cn(
-              regExp.test(value) ? "text-black-50" : "text-black-700",
-              "description",
-              "flex",
-              "justify-center",
-              "items-center"
-            )}
-            data-testid="checkbox-icon"
-          >
-            <CheckIcon
-              width="1.125rem"
-              focusable="false"
-              aria-hidden="true"
-              height="1.125rem"
-            />{" "}
-            {type}
-          </span>
-        ))}
-      </div>
+      {showPasswordCheck && (
+        <div className={cn("mt-1", "flex", "gap-x-4")}>
+          {PasswordCondition.map(({ type, regExp }) => (
+            <span
+              key={type}
+              className={cn(
+                regExp.test(value) ? "text-black-50" : "text-black-700",
+                "description",
+                "flex",
+                "justify-center",
+                "items-center"
+              )}
+              data-testid="checkbox-icon"
+            >
+              <CheckIcon
+                width="1.125rem"
+                focusable="false"
+                aria-hidden="true"
+                height="1.125rem"
+              />{" "}
+              {type}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
