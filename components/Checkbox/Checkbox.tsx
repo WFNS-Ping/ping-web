@@ -16,7 +16,7 @@ const Checkbox: React.FC<IProps> = ({
   ...props
 }) => {
   return (
-    <label className={cn("text-black-50", "flex", "items-center", className)}>
+    <label className={cn("text-black-950", "flex", "items-center", className)}>
       <input
         className={style["checkbox-input"]}
         type="checkbox"

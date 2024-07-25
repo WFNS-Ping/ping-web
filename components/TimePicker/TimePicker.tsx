@@ -5,7 +5,7 @@ import "./timepicker.css";
 
 import { cn } from "@/utils/cn";
 
-const MINUTES = Array.from({ length: 60 }, (_: unknown, i: number) => i);
+const MINUTES = Array.from({ length: 12 }, (_: unknown, i: number) => i * 5);
 const HOURS = Array.from({ length: 12 }, (_: unknown, i: number) => i + 1);
 const TimePicker = () => {
   return (

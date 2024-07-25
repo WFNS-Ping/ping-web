@@ -12,6 +12,7 @@ describe("PasswordInput", () => {
           placeholder="passwordInput"
           onChange={mockHandleChange}
           value=""
+          showPasswordCheck
         />
       );
     });
@@ -47,11 +48,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="헬로월드"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[0]).toHaveClass("text-black-700");
+        expect(checkboxIcon[0]).toHaveClass("text-black-200");
       });
       it("영문이 입력되었을 경우 영문 체크 표시가 활성화 되어야 한다.", () => {
         render(
@@ -60,11 +62,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="hello world!"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[0]).toHaveClass("text-black-50");
+        expect(checkboxIcon[0]).toHaveClass("text-black-950");
       });
     });
 
@@ -76,11 +79,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="헬로월드helloWorld!"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[1]).toHaveClass("text-black-700");
+        expect(checkboxIcon[1]).toHaveClass("text-black-200");
       });
       it("숫자가 입력되었을 경우 숫자 체크 표시가 활성화 되어야 한다.", () => {
         render(
@@ -89,11 +93,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="helloworld!1"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[1]).toHaveClass("text-black-50");
+        expect(checkboxIcon[1]).toHaveClass("text-black-950");
       });
     });
 
@@ -105,11 +110,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="헬로월드helloWorld12"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[2]).toHaveClass("text-black-700");
+        expect(checkboxIcon[2]).toHaveClass("text-black-200");
       });
       it("특수문자가 입력되었을 경우 특수문자 체크 표시가 활성화 되어야 한다.", () => {
         render(
@@ -118,11 +124,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="헬로월드helloWorld12!"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[2]).toHaveClass("text-black-50");
+        expect(checkboxIcon[2]).toHaveClass("text-black-950");
       });
     });
 
@@ -134,11 +141,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="oWorld12@"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[3]).toHaveClass("text-black-700");
+        expect(checkboxIcon[3]).toHaveClass("text-black-200");
       });
       it("글자수가 10자 이상 입력되었을 경우 글자수 체크 표시가 활성화 되어야 한다.", () => {
         render(
@@ -147,11 +155,12 @@ describe("PasswordInput", () => {
             placeholder="passwordInput"
             onChange={mockHandleChange}
             value="oWorld12!@#"
+            showPasswordCheck
           />
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[3]).toHaveClass("text-black-50");
+        expect(checkboxIcon[3]).toHaveClass("text-black-950");
       });
     });
   });

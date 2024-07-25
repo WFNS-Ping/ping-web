@@ -1,5 +1,5 @@
 import React from "react";
-import { LogoWhite } from "@/assets/icons";
+import { LogoBlack } from "@/assets/icons";
 import { cn } from "@/utils/cn";
 import SignUpForm from "./_components/SignUpForm";
 const SignUpPage = () => {

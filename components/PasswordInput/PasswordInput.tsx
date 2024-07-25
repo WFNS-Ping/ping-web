@@ -66,7 +66,7 @@ const PasswordInput: FC<PasswordInputProps> = ({
             <span
               key={type}
               className={cn(
-                regExp.test(value) ? "text-black-50" : "text-black-700",
+                regExp.test(value) ? "text-black-950" : "text-black-200",
                 "description",
                 "flex",
                 "justify-center",

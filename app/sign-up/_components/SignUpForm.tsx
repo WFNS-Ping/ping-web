@@ -37,12 +37,14 @@ const SignUpForm = () => {
           onChange={onPasswordChange}
           name="password"
           placeholder="비밀번호"
+          showPasswordCheck
         />
         <PasswordInput
           value={passwordCheck}
           onChange={onPasswordCheckChange}
           name="passwordCheck"
           placeholder="비밀번호 확인"
+          showPasswordCheck
         />
         <div className={cn("pl-4")}>
           <Checkbox
