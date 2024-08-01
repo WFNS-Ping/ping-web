@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/utils/cn";
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useState, InputHTMLAttributes } from "react";
 import { HideIcon, ShowIcon, CheckIcon } from "@/assets/icons";
-interface PasswordInputProps {
+interface PasswordInputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   placeholder?: string;
   disabled?: boolean;
@@ -17,15 +17,17 @@ const PasswordCondition = [
   { type: "특수문자", regExp: /.*[!@#$%^&*()].*/ },
   { type: "10자 이상", regExp: /^.{10,}$/ },
 ];
-const PasswordInput: FC<PasswordInputProps> = ({
-  name,
-  placeholder = "",
-  disabled,
-  onChange,
-  className,
-  value,
-  showPasswordCheck = false,
-}) => {
+const PasswordInput: FC<PasswordInputProps> = (props: PasswordInputProps) => {
+  const {
+    name,
+    placeholder = "",
+    disabled,
+    onChange,
+    className,
+    value,
+    showPasswordCheck = false,
+    ...rest
+  } = props;
   const [type, setType] = useState<"password" | "text">("password");
 
   const onClickIcon = () => {
@@ -40,6 +42,7 @@ const PasswordInput: FC<PasswordInputProps> = ({
         onChange={onChange}
         disabled={disabled}
         className={cn("input-base", className)}
+        {...rest}
       />
       {type === "password" ? (
         <HideIcon

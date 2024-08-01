@@ -15,6 +15,7 @@ const SignUpForm = () => {
   const { value: password, onChange: onPasswordChange } = useInput("");
   const { value: passwordCheck, onChange: onPasswordCheckChange } =
     useInput("");
+
   return (
     <>
       <form className={cn("flex", "flex-col", "gap-y-4")} action="">
@@ -37,6 +38,8 @@ const SignUpForm = () => {
           onChange={onPasswordChange}
           name="password"
           placeholder="비밀번호"
+          autoComplete="off"
+          maxLength={20}
           showPasswordCheck
         />
         <PasswordInput
@@ -44,6 +47,8 @@ const SignUpForm = () => {
           onChange={onPasswordCheckChange}
           name="passwordCheck"
           placeholder="비밀번호 확인"
+          autoComplete="off"
+          maxLength={20}
           showPasswordCheck
         />
         <div className={cn("pl-4")}>
@@ -68,7 +73,7 @@ const SignUpForm = () => {
           />
         </div>
       </form>
-      <FixedBottomCTA>회원가입</FixedBottomCTA>
+      <FixedBottomCTA bgColor="black">회원가입</FixedBottomCTA>
     </>
   );
 };
