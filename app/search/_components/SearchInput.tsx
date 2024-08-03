@@ -2,12 +2,20 @@
 import useInput from "@/hooks/useInput";
 import React from "react";
 import { ChevronLeftIcon, SearchIcon } from "@/assets/icons";
+import useAppRouter from "@/hooks/useAppRouter";
 const SearchInput = () => {
+  const router = useAppRouter();
   const { value, onChange } = useInput("");
   return (
     <div className="py-4 flex justify-between description">
       <div className="flex gap-x-2 flex-1">
-        <ChevronLeftIcon aria-label="뒤로가기" role="button" />
+        <ChevronLeftIcon
+          aria-label="뒤로가기"
+          role="button"
+          onClick={() => {
+            router.back();
+          }}
+        />
         <input
           className="outline-none flex-1 description"
           onChange={onChange}

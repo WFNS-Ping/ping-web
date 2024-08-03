@@ -37,7 +37,8 @@ const MapPage = () => {
             "text-black-200",
             "text-left",
             "bg-white",
-            "shadow-[0px_2px_2px_0px_rgba(0,0,0,0.2)]"
+            "shadow-[0px_2px_2px_0px_rgba(0,0,0,0.2)]",
+            "active:text-black-100"
           )}
           type="button"
           onClick={() => router.push("/search")}

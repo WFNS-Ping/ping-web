@@ -146,6 +146,7 @@ const config: Config = {
           fontSize: theme("fontSize.sm"),
           lineHeight: theme("lineHeight.6"),
           fontWeight: theme("fontWeight.bold"),
+          outline: "none",
           "&::placeholder": {
             fontSize: theme("fontSize.sm"),
             lineHeight: theme("lineHeight.6"),
