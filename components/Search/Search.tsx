@@ -2,7 +2,6 @@
 import { cn } from "@/utils/cn";
 import {
   ChangeEvent,
-  FC,
   PropsWithChildren,
   createContext,
   useContext,

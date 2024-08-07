@@ -4,6 +4,7 @@ import { StarIcon } from "@/assets/icons";
 import Image from "next/image";
 import BottomSheetBase from "../BottomSheetBase";
 import rgbDataURL from "@/utils/rgbDataURL";
+import PlaceInfo from "../PlaceInfo";
 type Props = {
   placeName: string;
   placeType: string;
@@ -26,24 +27,18 @@ const PlaceResultBottomSheet = ({
   return (
     <BottomSheetBase open={open} setOpen={setOpen}>
       <div>
-        <div className={cn("flex", "justify-between")}>
-          <h2 className={cn("body1", "font-bold")} aria-label="placeName">
-            {placeName}
-          </h2>
-          <StarIcon
-            width="1.5rem"
-            height="1.5rem"
-            fill="none"
-            aria-label="즐겨찾기 버튼"
-            role="button"
-          />
-        </div>
-        <div className={cn("text-black-400", "caption")}>
-          <span aria-label="placeType">{placeType}</span> |{" "}
-          <span aria-label="distance">{distance}m</span>
-        </div>
-        <h3 className="text-black-950 description">{address}</h3>
-
+        <PlaceInfo
+          placeName={placeName}
+          placeType={placeType}
+          address={address}
+          distance={distance}
+          iconType="bookmark"
+          bookMarkButtonOnClick={() => {}}
+        >
+          <PlaceInfo.PlaceName />
+          <PlaceInfo.PlaceTypeAndDistance />
+          <PlaceInfo.Address />
+        </PlaceInfo>
         {pictures && (
           <ul className={cn("mt-2", "grid", "grid-cols-2", "gap-x-2")}>
             {pictures.map((picture) => (
