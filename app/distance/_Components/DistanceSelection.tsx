@@ -4,7 +4,6 @@ import RadioGroup from "@/components/RadioGroup";
 import Radio from "@/components/Radio";
 import useAppRouter from "@/hooks/useAppRouter";
 import React, { useState } from "react";
-import { useRadioGroupContext } from "@/components/RadioGroup/RadioGroup";
 import DistanceBadge from "./DistanceBadge";
 
 const DistanceSelection = () => {

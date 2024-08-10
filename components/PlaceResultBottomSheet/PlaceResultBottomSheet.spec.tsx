@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import PlaceResultBottomSheet from "./PlaceResultBottomSheet";
 
 jest.mock("next/image", () => ({
@@ -24,7 +24,7 @@ describe("PlaceResultBottomSheet Component", () => {
     const placeName = screen.getByLabelText("placeName");
     const placeType = screen.getByLabelText("placeType");
     const distance = screen.getByLabelText("distance");
-    const starButton = screen.getByLabelText("즐겨찾기 버튼");
+    const starButton = screen.getByLabelText("북마크 버튼");
 
     expect(placeName).toBeInTheDocument();
     expect(placeType).toBeInTheDocument();

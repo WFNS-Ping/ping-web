@@ -53,7 +53,7 @@ PlaceInfo.PlaceName = function PlaceName() {
           width="1.5rem"
           height="1.5rem"
           fill="none"
-          aria-label="즐겨찾기 버튼"
+          aria-label="북마크 버튼"
           role="button"
           onClick={contextValue.bookMarkButtonOnClick}
         />
