@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./_components/Header";
 import PlaceItem from "./_components/PlaceItem";
+import Filters from "./_components/Filters";
 
 const data = Array.from({ length: 5 }, () => ({
   placeName: "다이소 영등포역점",
@@ -12,7 +13,8 @@ const data = Array.from({ length: 5 }, () => ({
 const LocationManagementPage = () => {
   return (
     <main>
-      <Header />
+      {/* <Header /> */}
+      <Filters filterType="distance" />
       {data.map((item, idx) => (
         <PlaceItem key={idx} {...item} />
       ))}

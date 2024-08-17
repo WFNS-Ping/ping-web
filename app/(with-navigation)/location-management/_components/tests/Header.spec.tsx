@@ -1,16 +1,16 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import Header from "../Header";
 import userEvent from "@testing-library/user-event";
-import useAppRouter from "../../../../hooks/useAppRouter";
+import useAppRouter from "../../../../../hooks/useAppRouter";
 
-jest.mock("../../../../hooks/useAppRouter");
+jest.mock("../../../../../hooks/useAppRouter");
 const mockHook = jest.mocked(useAppRouter);
 
 const mockBackfn = jest.fn();
 describe("Header Component", () => {
   beforeEach(() => {
     mockHook.mockReturnValue({
-      ...jest.requireActual("../../../../hooks/useAppRouter"),
+      ...jest.requireActual("../../../../../hooks/useAppRouter"),
       back: mockBackfn,
     });
   });

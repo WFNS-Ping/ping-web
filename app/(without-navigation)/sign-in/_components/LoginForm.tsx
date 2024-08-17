@@ -5,16 +5,39 @@ import Input from "@/components/Input";
 import PasswordInput from "@/components/PasswordInput";
 import useAppRouter from "@/hooks/useAppRouter";
 import useInput from "@/hooks/useInput";
+import useIsApp from "@/hooks/useIsApp";
 import { cn } from "@/utils/cn";
+import { sendNativeEvent } from "@/utils/sendNativeEvent";
+import { login } from "apis/fetcher/auth";
 import React from "react";
 
 const LoginForm = () => {
   const { value: id, onChange: onIdChange } = useInput("");
   const { value: password, onChange: onPasswordChange } = useInput("");
   const { push } = useAppRouter();
+  const { isApp } = useIsApp();
+
+  const onLogin = async (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    try {
+      const data = await login({ userId: id, password });
+      if (data.code === "success") {
+        if (isApp) {
+          sendNativeEvent({
+            type: "AUTH_TOKEN_EVENT",
+            params: { ...data.data },
+          });
+        } else {
+          console.log(data);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
-      <form action="">
+      <form>
         <Input
           value={id}
           onChange={onIdChange}
@@ -30,7 +53,7 @@ const LoginForm = () => {
           placeholder="비밀번호"
         />
         <div className={cn("mt-10", "flex", "flex-col", "justify-center")}>
-          <Button size="normal" bgColor="black">
+          <Button onClick={onLogin} type="button" size="normal" bgColor="black">
             로그인
           </Button>
           <span

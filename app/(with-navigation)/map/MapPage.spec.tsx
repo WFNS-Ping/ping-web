@@ -6,12 +6,12 @@ jest.mock("react-kakao-maps-sdk", () => ({
   Map: () => <div data-testid="kakaoMap" />,
 }));
 
-jest.mock("../../hooks/useKaKaoLoader", () => jest.fn());
+jest.mock("../../../hooks/useKaKaoLoader", () => jest.fn());
 const mockPushfn = jest.fn();
-jest.mock("../../hooks/useAppRouter", () => {
+jest.mock("../../../hooks/useAppRouter", () => {
   return jest.fn().mockImplementation(() => {
     return {
-      ...jest.requireActual("../../hooks/useKaKaoLoader"),
+      ...jest.requireActual("../../../hooks/useKaKaoLoader"),
       push: mockPushfn,
     };
   });
