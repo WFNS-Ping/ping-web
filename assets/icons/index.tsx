@@ -241,11 +241,82 @@ const BookMarkIcon = (props: SVGProps<SVGSVGElement>) => (
   >
     <path
       d="M5.58579 3.58579C5.21071 3.96086 5 4.46957 5 5V21L12 17.5L19 21V5C19 4.46957 18.7893 3.96086 18.4142 3.58579C18.0391 3.21071 17.5304 3 17 3H7C6.46957 3 5.96086 3.21071 5.58579 3.58579Z"
-      stroke="black"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
+  </svg>
+);
+const HomeIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g id="home">
+      <path
+        id="Vector"
+        d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.2652 5.10536 20.5196 5.29289 20.7071C5.48043 20.8946 5.73478 21 6 21H9M19 10L21 12M19 10V20C19 20.2652 18.8946 20.5196 18.7071 20.7071C18.5196 20.8946 18.2652 21 18 21H15M9 21C9.26522 21 9.51957 20.8946 9.70711 20.7071C9.89464 20.5196 10 20.2652 10 20V16C10 15.7348 10.1054 15.4804 10.2929 15.2929C10.4804 15.1054 10.7348 15 11 15H13C13.2652 15 13.5196 15.1054 13.7071 15.2929C13.8946 15.4804 14 15.7348 14 16V20C14 20.2652 14.1054 20.5196 14.2929 20.7071C14.4804 20.8946 14.7348 21 15 21M9 21H15"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);
+const BellIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width="25"
+    height="24"
+    viewBox="0 0 25 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g id="bell">
+      <path
+        id="Vector"
+        d="M15.6667 17H20.6667L19.2617 15.595C19.073 15.4063 18.9234 15.1822 18.8213 14.9357C18.7192 14.6891 18.6666 14.4249 18.6667 14.158V11C18.6668 9.75894 18.2823 8.54834 17.5659 7.53489C16.8496 6.52144 15.8367 5.75496 14.6667 5.341V5C14.6667 4.46957 14.456 3.96086 14.0809 3.58579C13.7058 3.21071 13.1971 3 12.6667 3C12.1363 3 11.6275 3.21071 11.2525 3.58579C10.8774 3.96086 10.6667 4.46957 10.6667 5V5.341C8.33669 6.165 6.66669 8.388 6.66669 11V14.159C6.66669 14.697 6.45269 15.214 6.07169 15.595L4.66669 17H9.66669M15.6667 17H9.66669M15.6667 17V18C15.6667 18.7956 15.3506 19.5587 14.788 20.1213C14.2254 20.6839 13.4623 21 12.6667 21C11.871 21 11.108 20.6839 10.5454 20.1213C9.98276 19.5587 9.66669 18.7956 9.66669 18V17"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);
+const UserIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g id="user">
+      <g id="Vector">
+        <path
+          d="M14.8285 9.82843C15.5786 9.07828 16 8.06087 16 7C16 5.93913 15.5786 4.92172 14.8285 4.17157C14.0783 3.42143 13.0609 3 12 3C10.9392 3 9.92175 3.42143 9.1716 4.17157C8.42146 4.92172 8.00003 5.93913 8.00003 7C8.00003 8.06087 8.42146 9.07828 9.1716 9.82843C9.92175 10.5786 10.9392 11 12 11C13.0609 11 14.0783 10.5786 14.8285 9.82843Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M7.05028 16.0503C8.36304 14.7375 10.1435 14 12 14C13.8565 14 15.637 14.7375 16.9498 16.0503C18.2625 17.363 19 19.1435 19 21H5.00003C5.00003 19.1435 5.73753 17.363 7.05028 16.0503Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+    </g>
   </svg>
 );
 
@@ -264,4 +335,7 @@ export {
   ChevronLeftIcon,
   LocationMarkerIcon,
   BookMarkIcon,
+  HomeIcon,
+  BellIcon,
+  UserIcon,
 };

@@ -123,3 +123,17 @@ textarea:not([rows]) {
     text-wrap: balance;
   }
 }
+
+.non-selected-nav-item {
+  & svg {
+    @apply text-black-950;
+  }
+  @apply text-black-400;
+}
+
+.selected-nav-item {
+  & svg {
+    @apply text-blue-600;
+  }
+  @apply text-black-950;
+}
