@@ -67,7 +67,7 @@ describe("PasswordInput", () => {
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[0]).toHaveClass("text-black-950");
+        expect(checkboxIcon[0]).toHaveClass("text-blue-600");
       });
     });
 
@@ -98,7 +98,7 @@ describe("PasswordInput", () => {
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[1]).toHaveClass("text-black-950");
+        expect(checkboxIcon[1]).toHaveClass("text-blue-600");
       });
     });
 
@@ -129,7 +129,7 @@ describe("PasswordInput", () => {
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[2]).toHaveClass("text-black-950");
+        expect(checkboxIcon[2]).toHaveClass("text-blue-600");
       });
     });
 
@@ -160,7 +160,7 @@ describe("PasswordInput", () => {
         );
 
         const checkboxIcon = screen.getAllByTestId("checkbox-icon");
-        expect(checkboxIcon[3]).toHaveClass("text-black-950");
+        expect(checkboxIcon[3]).toHaveClass("text-blue-600");
       });
     });
   });
