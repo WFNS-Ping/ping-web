@@ -50,44 +50,46 @@ type SearchProps = PropsWithChildren & {
 
 function Search({ searchItems, children }: SearchProps) {
   const [isFocused, setIsFocused] = useState(false);
-  <SearchContext.Provider value={{ searchItems }}>
-    <div
-      className={cn(
-        "py-4",
-        "px-6",
-        "flex",
-        "flex-col",
-        "gap-[0.625rem]",
-        "shadow-[0px_2px_2px_0px_rgba(0,0,0,0.2)]",
-        "rounded",
-        "bg-black-50",
-        "w-full"
-      )}
-    >
-      <div className={cn("relative")}>
-        <input
-          type="text"
-          name={searchItems.name}
-          placeholder={searchItems.placeholder}
-          onChange={searchItems.onChange}
-          disabled={searchItems.disabled}
-          onFocus={() => {
-            setIsFocused(true);
-          }}
-          className={cn("input-base", searchItems.className)}
-        />
-        <SearchIcon
-          aria-label="search-button"
-          role="button"
-          width="1.5rem"
-          height="1.5rem"
-          className={cn("absolute", "top-4", "right-6")}
-          onClick={searchItems.onClick}
-        />
+  return (
+    <SearchContext.Provider value={{ searchItems }}>
+      <div
+        className={cn(
+          "py-4",
+          "px-6",
+          "flex",
+          "flex-col",
+          "gap-[0.625rem]",
+          "shadow-[0px_2px_2px_0px_rgba(0,0,0,0.2)]",
+          "rounded",
+          "bg-black-50",
+          "w-full"
+        )}
+      >
+        <div className={cn("relative")}>
+          <input
+            type="text"
+            name={searchItems.name}
+            placeholder={searchItems.placeholder}
+            onChange={searchItems.onChange}
+            disabled={searchItems.disabled}
+            onFocus={() => {
+              setIsFocused(true);
+            }}
+            className={cn("input-base", searchItems.className)}
+          />
+          <SearchIcon
+            aria-label="search-button"
+            role="button"
+            width="1.5rem"
+            height="1.5rem"
+            className={cn("absolute", "top-4", "right-6")}
+            onClick={searchItems.onClick}
+          />
+        </div>
+        {isFocused && children}
       </div>
-      {isFocused && children}
-    </div>
-  </SearchContext.Provider>;
+    </SearchContext.Provider>
+  );
 }
 
 Search.KeywordButton = function SearchKeywordButton() {
