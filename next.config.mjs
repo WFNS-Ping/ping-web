@@ -27,6 +27,15 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "m.segye.com" },
+      { protocol: "https", hostname: "health.chosun.com" },
+    ],
+  },
+  experimental: {
+    instrumentationHook: true,
+  },
 };
 
 export default nextConfig;
