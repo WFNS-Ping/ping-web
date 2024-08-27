@@ -35,7 +35,7 @@ export const fetchAPI = async <T, E = Error>(
       throw new Error(res.statusText);
     }
     const data = (await res.json()) as T;
-    console.log("res", data);
+    console.log("res", res.headers.get("AccessToken"));
     return {
       code: "success",
       data: data,

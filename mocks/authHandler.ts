@@ -1,5 +1,5 @@
 import { APIEndpoints } from "apis/apiEndPoints";
-import { HttpResponse } from "msw";
+import { http, HttpResponse } from "msw";
 import { faker } from "@faker-js/faker";
 import { makeHandler } from "./utils";
 
@@ -8,27 +8,31 @@ interface ISignInReq {
   password: string;
 }
 
-const { url, method } = APIEndpoints["sign-in"].list;
-const authHandler = makeHandler({
-  method,
-  path: url,
-  resolver: async ({ request }) => {
-    const { userId, password } = (await request.json()) as ISignInReq;
+interface ISignInResponseBody {
+  status: string;
+}
 
-    if (userId === "test" && password === "test") {
-      return HttpResponse.json({
-        accessToken: faker.string.uuid(),
-        refreshToken: faker.string.octal(),
-      });
+const { url } = APIEndpoints["sign-in"].list;
+
+export const authHandlers = [
+  http.post<never, ISignInReq, ISignInResponseBody>(
+    url,
+    async ({ request }) => {
+      const { userId, password } = await request.json();
+
+      if (userId === "test" && password === "test") {
+        return HttpResponse.json(
+          {
+            status: "ok",
+          },
+          {
+            headers: {
+              accessToken: faker.string.uuid(),
+              refreshToken: faker.string.octal(),
+            },
+          }
+        );
+      }
     }
-
-    return HttpResponse.json(
-      {
-        error: "로그인 오류",
-      },
-      { status: 400 }
-    );
-  },
-});
-
-export const authHandlers = [authHandler];
+  ),
+];
