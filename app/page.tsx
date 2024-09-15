@@ -7,8 +7,10 @@ import useModal from "@/hooks/useModal";
 import ExampleModal from "@/components/ModalBase/ExampleModal";
 import PlaceResultBottomSheet from "@/components/PlaceResultBottomSheet";
 import TimePicker from "@/components/TimePicker/TimePicker";
+import useEventListener from "@/hooks/useEventListener";
 export default function Home() {
   const { openModal } = useModal(ExampleModal);
+  const { location } = useEventListener();
   const [first, setFirst] = useState("");
   const [checked, setChecked] = useState(false);
   const change = (e: ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +41,13 @@ export default function Home() {
         />
       </div>
       <button onClick={() => setChecked(true)}>모달 열기</button>
+      <button
+        onClick={() => {
+          console.log(location);
+        }}
+      >
+        위치 가져오기
+      </button>
 
       <PlaceResultBottomSheet
         {...mockProps}

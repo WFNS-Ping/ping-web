@@ -1,4 +1,7 @@
-type NativeEventType = "ROUTER_EVENT" | "AUTH_TOKEN_EVENT";
+type NativeEventType =
+  | "ROUTER_EVENT"
+  | "AUTH_TOKEN_EVENT"
+  | "GET_CURRENT_LOCATION_EVENT";
 interface ISendNativeEventParams {
   type: NativeEventType;
   params: Record<string, string | Record<string, unknown>>;
