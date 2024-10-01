@@ -8,6 +8,7 @@ import ExampleModal from "@/components/ModalBase/ExampleModal";
 import PlaceResultBottomSheet from "@/components/PlaceResultBottomSheet";
 import TimePicker from "@/components/TimePicker/TimePicker";
 import useEventListener from "@/hooks/useEventListener";
+import { sendNativeEvent } from "@/utils/sendNativeEvent";
 export default function Home() {
   const { openModal } = useModal(ExampleModal);
   const { location } = useEventListener();
@@ -43,7 +44,7 @@ export default function Home() {
       <button onClick={() => setChecked(true)}>모달 열기</button>
       <button
         onClick={() => {
-          console.log(location);
+          sendNativeEvent({ type: "GET_CURRENT_LOCATION_EVENT", params: {} });
         }}
       >
         위치 가져오기

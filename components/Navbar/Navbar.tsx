@@ -1,6 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
 import { HomeIcon, BookMarkIcon, BellIcon, UserIcon } from "@/assets/icons";
+import MyInfoButton from "../MyInfoButton";
 
 const Navbar = () => {
   return (
@@ -16,9 +17,7 @@ const Navbar = () => {
         <NavItem href="/alim">
           <BellIcon aria-hidden="true" focusable="false" /> <span>알림</span>
         </NavItem>
-        <NavItem href="/my">
-          <UserIcon aria-hidden="true" focusable="false" /> <span>마이</span>
-        </NavItem>
+        <MyInfoButton />
       </ul>
     </nav>
   );
