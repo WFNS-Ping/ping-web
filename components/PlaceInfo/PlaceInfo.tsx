@@ -8,16 +8,22 @@ type PlaceInfoContext = {
   placeType: string;
   distance: number;
   address: string;
-} & (StarProps | BookmarkProps);
+  isBrand: boolean;
+} & (StarProps | BookmarkProps | NoneIconProps);
 
 type StarProps = {
   iconType: "star";
+  isStared: boolean;
   starButtonOnClick: () => void;
 };
 
 type BookmarkProps = {
   iconType: "bookmark";
   bookMarkButtonOnClick: () => void;
+};
+
+type NoneIconProps = {
+  iconType: "none";
 };
 
 type PlaceInfoProps = PropsWithChildren & PlaceInfoContext;
@@ -45,10 +51,14 @@ PlaceInfo.PlaceName = function PlaceName() {
 
   return (
     <div className="flex justify-between">
-      <h2 className={cn("body1", "font-bold")} aria-label="placeName">
+      <h2
+        className={cn("body1", "font-bold", "flex", "items-center", "gap-x-1")}
+        aria-label="placeName"
+      >
         {contextValue.placeName}
+        {contextValue.isBrand && <BrandChip />}
       </h2>
-      {contextValue.iconType === "bookmark" ? (
+      {contextValue.iconType === "bookmark" && (
         <BookMarkIcon
           width="1.5rem"
           height="1.5rem"
@@ -57,11 +67,12 @@ PlaceInfo.PlaceName = function PlaceName() {
           role="button"
           onClick={contextValue.bookMarkButtonOnClick}
         />
-      ) : (
+      )}
+      {contextValue.iconType === "star" && (
         <StarIcon
           width="1.5rem"
           height="1.5rem"
-          fill="none"
+          fill={contextValue.isStared ? "#FFE80B" : "none"}
           aria-label="즐겨찾기 버튼"
           role="button"
           onClick={contextValue.starButtonOnClick}
@@ -89,5 +100,24 @@ PlaceInfo.Address = function Address() {
 
   return <h3 className="text-black-950 description">{address}</h3>;
 };
+
+function BrandChip() {
+  return (
+    <span
+      data-testid="brand-chip"
+      className={cn(
+        "bg-blue-600",
+        "border-[0.5px]",
+        "border-blue-600",
+        "rounded-[0.3125rem]",
+        "text-2xs",
+        "text-white",
+        "px-[0.3125rem]"
+      )}
+    >
+      B
+    </span>
+  );
+}
 
 export default PlaceInfo;

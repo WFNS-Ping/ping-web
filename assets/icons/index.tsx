@@ -320,6 +320,28 @@ const UserIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const ProfileDefaultIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g id="Frame 115">
+      <rect width="64" height="64" rx="32" fill="#888888" />
+      <path
+        id="Subtract"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6.95489 51.9204C10.2923 43.3433 20.2432 37.12 32 37.12C43.7568 37.12 53.7077 43.3433 57.0451 51.9204C61.3985 46.4543 64 39.531 64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 39.531 2.60151 46.4543 6.95489 51.9204ZM44.8 21.44C44.8 28.3325 39.2125 33.92 32.32 33.92C25.4275 33.92 19.84 28.3325 19.84 21.44C19.84 14.5475 25.4275 8.96 32.32 8.96C39.2125 8.96 44.8 14.5475 44.8 21.44Z"
+        fill="#E7E7E7"
+      />
+    </g>
+  </svg>
+);
+
 export {
   ShowIcon,
   HideIcon,
@@ -338,4 +360,5 @@ export {
   HomeIcon,
   BellIcon,
   UserIcon,
+  ProfileDefaultIcon,
 };

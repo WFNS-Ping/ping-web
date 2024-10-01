@@ -79,6 +79,9 @@ const config: Config = {
           950: "#000000",
         },
       },
+      fontSize: {
+        "2xs": ["0.625rem", "16px"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

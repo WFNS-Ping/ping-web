@@ -11,6 +11,8 @@ describe("PlaceInfo", () => {
     placeType: "Restaurant",
     distance: 500,
     address: "123 Test St",
+    isBrand: false,
+    isStared: false,
     iconType: "star" as "star",
     starButtonOnClick: mockStarButtonOnClick,
   };
@@ -28,6 +30,28 @@ describe("PlaceInfo", () => {
 
     expect(screen.getByLabelText("placeName")).toHaveTextContent("Test Place");
     expect(screen.getByLabelText("즐겨찾기 버튼")).toBeInTheDocument();
+  });
+
+  it("인증 브랜드 일 경우, 브랜드라는 Chip이 노출되어야 한다.", () => {
+    render(
+      <PlaceInfo {...placeInfoProps} isBrand={true}>
+        <PlaceInfo.PlaceName />
+      </PlaceInfo>
+    );
+    expect(screen.getByTestId("brand-chip")).toBeInTheDocument();
+  });
+
+  it("iconType이 'none'일 경우 아이콘이 렌더링 되지 말아야 한다.", () => {
+    render(
+      <PlaceInfo {...placeInfoProps} iconType="none">
+        <PlaceInfo.PlaceName />
+      </PlaceInfo>
+    );
+    const labels = ["즐겨찾기 버튼", "북마크 버튼"];
+
+    labels.forEach((label) => {
+      expect(screen.queryByLabelText(label)).not.toBeInTheDocument();
+    });
   });
 
   it("PlaceTypeAndDistance 컴포넌트가 정상적으로 렌더링 되어야 한다.", () => {
