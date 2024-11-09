@@ -2,16 +2,14 @@
 import Link from "next/link";
 import PasswordInput from "@/components/PasswordInput";
 import { ChangeEvent, useState } from "react";
-import Checkbox from "@/components/Checkbox";
 import useModal from "@/hooks/useModal";
 import ExampleModal from "@/components/ModalBase/ExampleModal";
 import PlaceResultBottomSheet from "@/components/PlaceResultBottomSheet";
 import TimePicker from "@/components/TimePicker/TimePicker";
-import useEventListener from "@/hooks/useEventListener";
+
 import { sendNativeEvent } from "@/utils/sendNativeEvent";
 export default function Home() {
   const { openModal } = useModal(ExampleModal);
-  const { location } = useEventListener();
   const [first, setFirst] = useState("");
   const [checked, setChecked] = useState(false);
   const change = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,13 +32,6 @@ export default function Home() {
         placeholder=""
       />
       <Link href="/about">About</Link>
-      <div className="bg-black-950">
-        <Checkbox
-          label="필수 값"
-          checked={checked}
-          onChange={() => setChecked(!checked)}
-        />
-      </div>
       <button onClick={() => setChecked(true)}>모달 열기</button>
       <button
         onClick={() => {

@@ -21,6 +21,9 @@ const useEventListener = () => {
       ? document
       : window;
     receiver.addEventListener("message", listener as EventListener);
+    return () => {
+      receiver.removeEventListener("message", listener as EventListener);
+    };
   }, []);
 
   return { location };

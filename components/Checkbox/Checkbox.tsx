@@ -6,36 +6,49 @@ interface IProps {
   className?: string;
   checked: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  label: string | React.ReactNode;
+  children: React.ReactNode;
+  colorType?: "black" | "gray";
+  checkboxWrapperClassName?: string;
 }
 
 const Checkbox: React.FC<IProps> = ({
   className,
   checked,
-  label,
+  children,
+  colorType = "black",
+  checkboxWrapperClassName,
   ...props
 }) => {
   return (
-    <label className={cn("text-black-950", "flex", "items-center", className)}>
+    <label className={cn("text-black-950", "flex", "gap-x-1", className)}>
       <input
         className={style["checkbox-input"]}
         type="checkbox"
         checked={checked}
         {...props}
       />
-
-      <div className={cn(style["checkbox"])}>
-        {checked && (
-          <CheckIcon
-            data-testid="checkbox-icon"
-            width="0.75rem"
-            height="0.5rem"
-            aria-hidden="true"
-          />
-        )}
+      <div
+        className={cn("w-6", "h-6", "p-[0.125rem]", checkboxWrapperClassName)}
+      >
+        <div
+          className={cn(
+            style["checkbox"],
+            style[!checked && colorType === "black" ? "black" : "gray"],
+            checked && style["blue"]
+          )}
+        >
+          {checked && (
+            <CheckIcon
+              data-testid="checkbox-icon"
+              width="0.75rem"
+              height="0.5rem"
+              aria-hidden="true"
+              className={cn("text-blue-600")}
+            />
+          )}
+        </div>
       </div>
-
-      <span className={cn("description")}>{label}</span>
+      {children}
     </label>
   );
 };
