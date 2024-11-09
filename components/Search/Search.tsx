@@ -8,13 +8,8 @@ import {
   useState,
 } from "react";
 import { ClockIcon, SearchIcon, XIcon } from "@/assets/icons";
-
-type SearchContext = {
-  searchItems: Search;
-};
-
-const SearchContext = createContext<SearchContext | undefined>(undefined);
-
+type SearchContextType = { searchItems: SearchProps };
+const SearchContext = createContext<SearchContextType | undefined>(undefined);
 const useSearchContext = () => {
   const context = useContext(SearchContext);
   if (!context) {
@@ -22,72 +17,60 @@ const useSearchContext = () => {
   }
   return context;
 };
-
-interface Search {
+interface SearchProps {
   name: string;
   placeholder?: string;
   disabled?: boolean;
   className?: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onClick: () => void;
-  recommendedKeyword: {
-    title: string;
-    words: string[];
-  };
-  recentSearches: {
-    title: string;
-    words: string[];
-  };
-  keywordButton: {
-    name: string;
-    onClick: () => void;
-  };
+  recommendedKeyword: { title: string; words: string[] };
+  recentSearches: { title: string; words: string[] };
+  keywordButton: { name: string; onClick: () => void };
 }
-
-type SearchProps = PropsWithChildren & {
-  searchItems: Search;
-};
-
-function Search({ searchItems, children }: SearchProps) {
+type SearchComponentProps = PropsWithChildren & { searchItems: SearchProps };
+function Search({ searchItems, children }: SearchComponentProps) {
   const [isFocused, setIsFocused] = useState(false);
-  <SearchContext.Provider value={{ searchItems }}>
-    <div
-      className={cn(
-        "py-4",
-        "px-6",
-        "flex",
-        "flex-col",
-        "gap-[0.625rem]",
-        "shadow-[0px_2px_2px_0px_rgba(0,0,0,0.2)]",
-        "rounded",
-        "bg-black-50",
-        "w-full"
-      )}
-    >
-      <div className={cn("relative")}>
-        <input
-          type="text"
-          name={searchItems.name}
-          placeholder={searchItems.placeholder}
-          onChange={searchItems.onChange}
-          disabled={searchItems.disabled}
-          onFocus={() => {
-            setIsFocused(true);
-          }}
-          className={cn("input-base", searchItems.className)}
-        />
-        <SearchIcon
-          aria-label="search-button"
-          role="button"
-          width="1.5rem"
-          height="1.5rem"
-          className={cn("absolute", "top-4", "right-6")}
-          onClick={searchItems.onClick}
-        />
+  return (
+    <SearchContext.Provider value={{ searchItems }}>
+      <div
+        className={cn(
+          "py-4",
+          "px-6",
+          "flex",
+          "flex-col",
+          "gap-[0.625rem]",
+          "shadow-[0px_2px_2px_0px_rgba(0,0,0,0.2)]",
+          "rounded",
+          "bg-black-50",
+          "w-full"
+        )}
+      >
+        <div className={cn("relative")}>
+          <input
+            type="text"
+            name={searchItems.name}
+            placeholder={searchItems.placeholder}
+            onChange={searchItems.onChange}
+            disabled={searchItems.disabled}
+            onFocus={() => {
+              setIsFocused(true);
+            }}
+            className={cn("input-base", searchItems.className)}
+          />
+          <SearchIcon
+            aria-label="search-button"
+            role="button"
+            width="1.5rem"
+            height="1.5rem"
+            className={cn("absolute", "top-4", "right-6")}
+            onClick={searchItems.onClick}
+          />
+        </div>
+        {isFocused && children}
       </div>
-      {isFocused && children}
-    </div>
-  </SearchContext.Provider>;
+    </SearchContext.Provider>
+  );
 }
 
 Search.KeywordButton = function SearchKeywordButton() {
@@ -173,5 +156,4 @@ Search.RecentSearches = function RecentSearches() {
     </div>
   );
 };
-
 export default Search;
