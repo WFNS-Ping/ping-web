@@ -32,8 +32,9 @@ html {
   text-size-adjust: none;
 }
 
-main {
-  padding: 1.25rem 1rem;
+section {
+  padding: 0 1rem;
+  overflow: auto;
 }
 /* 기본 여백을 제거하여 작성된 CSS를 더 잘 제어할 수 있습니다. */
 body,

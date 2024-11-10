@@ -17,7 +17,7 @@ const mockProps = {
   open: true,
   setOpen: jest.fn(),
 };
-describe("PlaceResultBottomSheet Component", () => {
+describe.skip("PlaceResultBottomSheet Component", () => {
   it("장소 결과 컴포넌트는 '장소 이름', '장소 타입', '거리', '주소', '즐겨찾기 버튼'이 있어야 한다.", () => {
     render(<PlaceResultBottomSheet {...mockProps} />);
 

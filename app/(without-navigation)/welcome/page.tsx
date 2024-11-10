@@ -7,7 +7,7 @@ import FixedBottomCTA from "@/components/BottomFixedButton";
 const WelcomePage = () => {
   const router = useAppRouter();
   return (
-    <main className={cn("h-full", "pt-10")}>
+    <section className={cn("h-content-height", "pt-10")}>
       <div>
         <OnboardingBadge currentStep={1} totalStep={4} />
         <h1 className={cn("body1", "font-bold", "text-black-950", "mt-2")}>
@@ -30,7 +30,7 @@ const WelcomePage = () => {
       <FixedBottomCTA bgColor="black" onClick={() => router.push("/setting")}>
         다음
       </FixedBottomCTA>
-    </main>
+    </section>
   );
 };
 export default WelcomePage;

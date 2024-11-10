@@ -5,7 +5,7 @@ import DistanceSelection from "./_Components/DistanceSelection";
 
 const DistancePage = () => {
   return (
-    <main className={cn("h-full", "pt-10")}>
+    <section className={cn("h-content-height", "pt-10")}>
       <div>
         <OnboardingBadge currentStep={3} totalStep={4} />
         <h1 className={cn("body1", "font-bold", "text-black-950", "mt-2")}>
@@ -25,7 +25,7 @@ const DistancePage = () => {
         <span>원하시는 거리를 설정해주세요.</span>
       </div>
       <DistanceSelection />
-    </main>
+    </section>
   );
 };
 

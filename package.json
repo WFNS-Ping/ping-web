@@ -9,6 +9,8 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "prettier": "prettier --ignore-path .gitignore --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

@@ -28,9 +28,11 @@ const Checkbox: React.FC<IProps> = ({
         {...props}
       />
       <div
+        data-testid="checkbox-ui"
         className={cn("w-6", "h-6", "p-[0.125rem]", checkboxWrapperClassName)}
       >
         <div
+          data-testid="circle-ui"
           className={cn(
             style["checkbox"],
             style[!checked && colorType === "black" ? "black" : "gray"],

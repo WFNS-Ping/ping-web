@@ -9,7 +9,7 @@ import React from "react";
 const TimePage = () => {
   const router = useAppRouter();
   return (
-    <main className={cn("h-full", "pt-10")}>
+    <section className={cn("h-content-height", "pt-10")}>
       <div>
         <OnboardingBadge currentStep={3} totalStep={4} />
         <h1 className={cn("body1", "font-bold", "text-black-950", "mt-2")}>
@@ -33,7 +33,7 @@ const TimePage = () => {
       <FixedBottomCTA bgColor="black" onClick={() => router.push("/start")}>
         다음
       </FixedBottomCTA>
-    </main>
+    </section>
   );
 };
 

@@ -1,6 +1,5 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import AlimItem from "./AlimItem";
-import { screen } from "@storybook/test";
 
 const mockAlimContent = "알림입니다!";
 describe("AlimItem Component", () => {

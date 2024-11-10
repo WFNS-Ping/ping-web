@@ -5,12 +5,20 @@ import OnboardingBadge from "@/components/OnboardingBadge/OnboardingBadge";
 
 import Image from "next/image";
 import handImage from "@/assets/images/phone-touch-hands.png";
-import NextButton from "./_Component/NextButton";
+import FixedBottomCTA from "@/components/BottomFixedButton";
+import useAppRouter from "@/hooks/useAppRouter";
 
 const StartPage = () => {
+  const router = useAppRouter();
   return (
-    <main
-      className={cn("flex", "flex-col", "justify-between", "h-full", "pt-10")}
+    <section
+      className={cn(
+        "flex",
+        "flex-col",
+        "justify-between",
+        "h-content-height",
+        "pt-10"
+      )}
     >
       <div>
         <OnboardingBadge currentStep={4} totalStep={4} />
@@ -32,21 +40,29 @@ const StartPage = () => {
           <span>장소를 등록하면 잊지 않도록 Ping이 알림을 보내드릴게요.</span>
         </div>
       </div>
-      <Image
-        src={handImage}
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          aspectRatio: "8 / 5",
-          overflow: "hidden",
-        }}
-        alt="휴대폰을 터치하고 있는 손"
-      />
-
-      <NextButton />
-    </main>
+      <div className="flex items-center justify-center grow">
+        <Image
+          src={handImage}
+          width={0}
+          height={0}
+          aria-hidden="true"
+          sizes="100vw"
+          style={{
+            width: "100%",
+            aspectRatio: "8 / 5",
+            overflow: "hidden",
+          }}
+          alt="휴대폰을 터치하고 있는 손"
+        />
+      </div>
+      <FixedBottomCTA
+        bgColor="black"
+        type="button"
+        onClick={() => router.push("/map")}
+      >
+        다음
+      </FixedBottomCTA>
+    </section>
   );
 };
 export default StartPage;

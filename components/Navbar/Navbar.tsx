@@ -1,11 +1,20 @@
-import React from "react";
 import NavItem from "./NavItem";
 import { HomeIcon, BookMarkIcon, BellIcon, UserIcon } from "@/assets/icons";
 import MyInfoButton from "../MyInfoButton";
+import { cn } from "@/utils/cn";
 
 const Navbar = () => {
   return (
-    <nav className="px-10 py-2 fixed bottom-0 w-full z-10 bg-white">
+    <nav
+      className={cn(
+        "px-10",
+        "py-2",
+        "w-full",
+        "z-10",
+        "bg-white",
+        "shadow-nav"
+      )}
+    >
       <ul className="flex justify-between">
         <NavItem href="/map">
           <HomeIcon aria-hidden="true" focusable="false" /> <span>지도</span>

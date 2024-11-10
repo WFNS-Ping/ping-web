@@ -12,7 +12,7 @@ function TypeA(props: TypeAProps) {
         data-testid="button_location_elem"
         className={cn("fixed", "w-full", "left-0", "bottom-0")}
       >
-        <div className={cn("pt-0", "pb-5", "px-4")}>
+        <div className={cn("px-4")}>
           <Button {...props} />
         </div>
       </div>

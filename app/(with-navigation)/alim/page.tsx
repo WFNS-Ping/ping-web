@@ -2,9 +2,7 @@ import { CogIcon } from "@/assets/icons";
 import React from "react";
 import AlimList from "./_components/AlimList";
 
-type Props = {};
-
-const page = (props: Props) => {
+const page = () => {
   return (
     <>
       <header className="flex justify-between items-center px-4">
@@ -13,7 +11,7 @@ const page = (props: Props) => {
           <CogIcon aria-hidden="true" focusable="false" />
         </button>
       </header>
-      <section className="grow pb-14 overflow-scroll scrollbar-hide">
+      <section className="grow pb-2 overflow-scroll scrollbar-hide">
         <AlimList />
       </section>
     </>

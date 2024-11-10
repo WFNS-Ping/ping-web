@@ -10,7 +10,7 @@ const Page = ({ params }: { params: { id: string } }) => {
   ];
 
   return (
-    <main className={cn("flex", "flex-col", "gap-y-2")}>
+    <section className={cn("flex", "flex-col", "gap-y-2", "h-full", "py-2")}>
       <header className={cn("relative")}>
         <h1 className={cn("body1", "font-bold", "text-center")}>
           다이소 영등포역점{params.id}
@@ -59,7 +59,7 @@ const Page = ({ params }: { params: { id: string } }) => {
         <PhoneIcon aria-hidden="true" focusable="false" />{" "}
         <span className={cn("description")}>1522-4400</span>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -13,5 +13,5 @@ export default function WithoutNavigationLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return <main className="h-full flex flex-col">{children}</main>;
 }
