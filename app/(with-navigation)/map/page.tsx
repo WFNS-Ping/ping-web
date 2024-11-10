@@ -10,7 +10,7 @@ const MapPage = () => {
   useKakaoLoader();
   const router = useAppRouter();
   return (
-    <main className="relative w-full h-full p-0">
+    <section className="relative w-full h-full p-0">
       <Map // 지도를 표시할 Container
         id="map"
         center={{
@@ -53,7 +53,7 @@ const MapPage = () => {
           />
         </button>
       </div>
-    </main>
+    </section>
   );
 };
 
