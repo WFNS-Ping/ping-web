@@ -40,6 +40,7 @@ const useAppRouter = () => {
 
     options: TransitionOptions = { shallow: true }
   ): Promise<void | boolean> => {
+    console.log("baseUrl", BASE_URL);
     return isApp
       ? sendNativeEvent({
           type: "ROUTER_EVENT",
